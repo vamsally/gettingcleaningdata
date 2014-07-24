@@ -2,11 +2,12 @@ Getting and Cleaning Data Assignment 2
 ========================================
 
 Script: run_analysis.R
+
 Codebook: tidydata_codebook.rmd
 
-Output file: tidydata.txt and tidydata2.txt
+Output files: tidydata.txt and tidydata2.txt
 
-Script works following way:
+Script works as follows:
 
 1. Ingests various features data
 2. Ingests test data (both subject and X, y data)
