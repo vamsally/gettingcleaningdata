@@ -1,4 +1,4 @@
-Getting and Cleaning Daata Assignment 2
+Getting and Cleaning Data Assignment 2
 ========================================
 
 Script: run_analysis.R
