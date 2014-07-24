@@ -7,6 +7,7 @@ Codebook: tidydata_codebook.rmd
 Output file: tidydata.txt and tidydata2.txt
 
 Script works following way:
+
 1. Ingests various features data
 2. Ingests test data (both subject and X, y data)
 3. Appropriately label column name using features data
