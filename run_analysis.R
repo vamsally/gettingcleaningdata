@@ -33,9 +33,12 @@ xytrain <- cbind(subtrain,ytrain,xtrain)
 full <- rbind (xytrain, xytest)
 
 # only take out the columns that are relevant for mean and std
-adata <- full[,c(1:6,41:46,81:86,121:126,161:166,201,202,214,215
-                 ,227,228,240,241,253,254,266:271,345:350,424:429
-                 ,449,503,504,516,517,529,530,542,543)]
+adata1 <- full[, c(1,2)]
+adata2 <- full[, grep("mean()", colnames(full))]
+adata2 <- adata2[, -(grep("meanFreq()", colnames(adata2)))]
+adata3 <- full[, grep("std()", colnames(full))]
+
+adata <- cbind (adata1, adata2, adata3)
 
 # read in the activity labels
 act <- read.table ("activity_labels.txt")
@@ -45,7 +48,7 @@ colnames(act) <- c("Activity_label","Activity_desc")
 cdata <- merge (adata, act, by.x="Activity_label", by.y="Activity_label")
 
 # prepare tidy dataset with columns ordered well
-tidydata <- cdata[,c(2,1,68,3:67)]
+tidydata <- cdata[,c(2,1,69,3:68)]
 
 # write out the tidy dataset 1
 write.table(tidydata, "tidydata.txt", sep="\t")
